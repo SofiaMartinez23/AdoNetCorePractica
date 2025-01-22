@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace AdoNetCorePractica.Model
 {
-    public class Doctor
+    public class Empleados
     {
         public int idHospital { get; set; }
-
         public string apellido { get; set; }
-
-        public string funcion { get; set; }
-
+        public string trabajo { get; set; }
+        public int salario { get; set; }
     }
 }

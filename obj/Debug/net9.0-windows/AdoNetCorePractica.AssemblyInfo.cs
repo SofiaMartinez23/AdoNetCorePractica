@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdoNetCorePractica")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f18de80d2d53cae33dbe934eea7d9c5e629d9fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdoNetCorePractica")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdoNetCorePractica")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

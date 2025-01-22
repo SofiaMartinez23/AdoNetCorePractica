@@ -1,3 +1,5 @@
+using AdoNetCorePractica.Model;
+using AdoNetCorePractica.Models;
 using AdoNetCorePractica.Repository;
 
 namespace AdoNetCorePractica
@@ -24,12 +26,33 @@ namespace AdoNetCorePractica
 
         }
 
+        public async Task LoadEmpleados(string namehospital)
+        {
+            List<string> empleados = await this.repo.GetEmpleadosHospitalAsync(namehospital);
+            EmpHospInfo model = await this.repo.GetEmpleadosHospital(namehospital);
+
+            this.lblEmpHospital.Items.Clear();
+
+            foreach (string empleado in empleados)
+            {
+                this.lblEmpHospital.Items.Add(empleado);
+            }
+            this.txtSuma.Text = model.SumaSalarial.ToString();
+            this.txtMedia.Text = model.MediaSalarial.ToString();
+            this.txtPersonas.Text = model.Personas.ToString();
+        }
+
+
+
         private async void cmbHospitales_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.cmbHospitales.SelectedIndex == -1)
+            if (this.cmbHospitales.SelectedIndex != -1)
             {
-                string nombre = this.cmbHospitales.SelectedItem.ToString();
+                string nombreHospital = this.cmbHospitales.SelectedItem.ToString();
+
+                await this.LoadEmpleados(nombreHospital);
             }
         }
+
     }
 }
